@@ -1,1 +1,21 @@
-<h1>Ma belle librairie !!!</h1>
+<!-- <h1>
+        {{library.label}} {{library.type}}
+        {{library.directorDTO.surname}}
+        {{library.directorDTO.name | uppercase}}
+</h1> -->
+
+<div class="library">
+    <div class="label"> {{library.label}}</div>
+        <div class="adress">
+        <div class="rue">
+            {{library.addressDTO.numberStreet + ' ' + library.addressDTO.street}}
+        </div>
+        <div class="codePostalVille">
+            {{library.addressDTO.posalCode + ' ' + library.addressDTO.city}}
+        </div>
+
+    </div>
+    <div class="director">
+            {{library.directorDTO.name + ' ' + library.directorDTO.surname.toUpperCase()}}
+    </div>
+</div>

@@ -1,3 +1,11 @@
-<h1>{{name}} Hello mon Guichon</h1>
+<H1>{{name}} Hello mon Guichon</H1>
 <h1>La somme de 3 et 5 est égale à : {{3+5}}</h1>
 <button [disabled]= "stateButton" label="click on" (click)="switchDisable()"><img [src] = 'image' ></button>
+<h1>{{maVar}} {{values}}</h1>
+
+<br>
+<input label='Mon text' (keyup)="changeMethode($event)">
+<br>
+<input Label='mon text2' [(ngModel)]= "myProperty">
+<br>
+ valeur de la propriété myProperty = {{myProperty}}

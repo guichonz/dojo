@@ -1,20 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LibraryComponent } from './components/library/library.component';
 import { DisplayDataComponent } from './components/display-data/display-data.component';
+import { ListLibrariesComponent } from './components/list-libraries/list-libraries.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LibraryComponent,
-    DisplayDataComponent
+    DisplayDataComponent,
+    ListLibrariesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,26 @@
+<p>list-libraries works!</p>
+
+<app-library *ngFor="let myLibrary of libraries"
+    [library]="myLibrary">
+</app-library>
+
+
+<!--
+<ul *ngIf="libraries.length > 15 ; then thenBlock else elseBlock"></ul>
+
+<ng-template #thenBlock>
+    trop de bibliothèques
+        <li *ngFor="let bibli of libraries">
+            {{bibli.label}} {{bibli.type}}
+            {{bibli.directorDTO.surname}}
+            {{bibli.directorDTO.name | uppercase}}
+        ></li>
+</ng-template>
+
+<ng-template #elseBlock>
+    <li *ngFor="let bibli of libraries">
+        {{bibli.label}} {{bibli.type}}
+        {{bibli.directorDTO.surname}}
+        {{bibli.directorDTO.name | uppercase}}
+    </li>
+</ng-template> -->
