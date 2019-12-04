@@ -7,12 +7,33 @@
 
 
   <div class="menuside">
+    <ul>
+      <li>
+        <h2>
+          <a routerLink="/liste">Liste des bibliothèques</a>
+        </h2>
+      </li>
+
+      <li>
+    <h2>
+      <a routerLink="/nouveau">Nouvelle bibliothèque</a>
+    </h2>
+  </li>
+
+  <li>
+    <h2>
+      <a routerLink="/nouveau">Modifier bibliothèque à coder</a>
+    </h2>
+  </li>
+  </ul>
+
 
   </div>
 
   <div class="container">
-      <app-library-form></app-library-form>
-      <app-list-libraries></app-list-libraries>
+      <!-- <app-library-form></app-library-form>
+      <app-list-libraries></app-list-libraries> -->
+      <router-outlet></router-outlet>
 
   </div>
 

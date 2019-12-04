@@ -5,6 +5,7 @@ import { LibraryDTO } from 'src/app/shared-data/library-dto';
 import { AddressDTO } from 'src/app/shared-data/address-dto';
 import { DirectorDTO } from 'src/app/shared-data/director-dto';
 import { LibraryService } from 'src/app/services/library.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-library-form',
@@ -25,7 +26,7 @@ export class LibraryFormComponent implements OnInit {
   });
 
 
-  constructor(private libraryService: LibraryService) { }
+  constructor(private libraryService: LibraryService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -46,6 +47,10 @@ export class LibraryFormComponent implements OnInit {
 
     this.libraryService.addLibrary(libraryDTO).subscribe (() => {
       console.log('Success');
+      this.router.navigate(['/liste']);
+    },
+    (error) => {
+      console.log('une erreur est arrivée : ' + error );
     });
   }
 
