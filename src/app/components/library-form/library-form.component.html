@@ -2,6 +2,27 @@
 <h1>Mettre à jour une bibliothèque</h1>
 
 <form [formGroup]="libraryForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert">
+                <div *ngIf="city.errors.required">
+                    la ville est obligatoire
+                </div>
+                <div *ngIf="city.errors.minlength">
+                    la ville doit faire minimum deux caractères
+                </div>
+        </div>
+
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert">
+                <div *ngIf="firstName.errors.required">
+                    le prénom est obligatoire
+                </div>
+        </div>
+
+        <div *ngIf="type.invalid && (type.dirty || type.touched)" class="alert">
+                <div *ngIf="type.errors.availabletype">
+                    le type doit être PUBLIC ou NATIONAL
+                </div>
+        </div>
+
         <div class="line">
                 <label>
                     <h3>Bibiliothèque :</h3>
@@ -15,6 +36,7 @@
                     <input type="text" formControlName="type" >
                 </label>
             </div>
+
             <div class="shape">
                     <div class="line">
                             <label>
@@ -62,7 +84,7 @@
 
 
     <div class="line">
-        <button> Sauvegarder </button>
+        <button [disabled]="!libraryForm.valid"> Sauvegarder </button>
     </div>
 
 </form>
