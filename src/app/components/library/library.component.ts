@@ -34,11 +34,8 @@ export class LibraryComponent implements OnInit {
     console.log("id", this.library.id);
     this.libraryService.deleteLibrary(this.library.id).subscribe (() => {
       console.log('Delete Success');
-      this.router.navigate(['/liste']);
+      //this.router.navigate(['/liste']);
       location.reload();
-
-
-
     },
     (error) => {
       console.log('une erreur est arrivée : ' + error );

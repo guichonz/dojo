@@ -5,9 +5,16 @@
 </h1> -->
 
 <div class="library">
+        <div>
+                <button [routerLink]="link" (click)="display()" class="fa fa-pencil"></button>
+                <a class="fa fa-trash" (click)="delete()"></a>
 
-        <div class="label"> {{library.label}} <a [routerLink]="link" (click)="display()">Modifier</a>
-            <button (click)="delete()"> Supprimer </button></div>
+
+        </div>
+
+        <div class="label"> {{library.label}}
+
+        </div>
 
 
         <div class="adress">
