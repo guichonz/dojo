@@ -5,7 +5,7 @@ import { LibraryDTO } from 'src/app/shared-data/library-dto';
 import { AddressDTO } from 'src/app/shared-data/address-dto';
 import { DirectorDTO } from 'src/app/shared-data/director-dto';
 import { LibraryService } from 'src/app/services/library.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-library-form',
@@ -26,9 +26,11 @@ export class LibraryFormComponent implements OnInit {
   });
 
 
-  constructor(private libraryService: LibraryService, private router: Router) { }
+
+  constructor(private libraryService: LibraryService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
   }
 
   get city() { return this.libraryForm.get('city'); }

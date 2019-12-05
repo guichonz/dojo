@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'liste', component: ListLibrariesComponent },
  // { path: 'listeprime', component: ListLibrariesPrimeComponent },
   { path: 'nouveau', component: LibraryFormComponent },
-  { path: 'modifier/:id', component: ListLibrariesComponent },
+  { path: 'modifier/:id', component: LibraryFormComponent },
   { path: '', redirectTo: '/liste', pathMatch: 'full' },
 
 ];

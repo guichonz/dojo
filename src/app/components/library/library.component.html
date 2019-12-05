@@ -5,7 +5,10 @@
 </h1> -->
 
 <div class="library">
-    <div class="label"> {{library.label}}</div>
+
+        <div class="label"> {{library.label}} <a [routerLink]="link" (click)="display()">Modifier</a></div>
+
+
         <div class="adress">
         <div class="rue">
             {{library.addressDTO.numberStreet + ' ' + library.addressDTO.street}}
@@ -18,4 +21,5 @@
     <div class="director">
             {{library.directorDTO.firstname + ' ' + library.directorDTO.lastname.toUpperCase()}}
     </div>
+
 </div>

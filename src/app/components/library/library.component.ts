@@ -13,10 +13,18 @@ export class LibraryComponent implements OnInit {
   @Input()
   library: LibraryDTO;
 
+  link : string;
+
+
 
   constructor() { }
 
   ngOnInit() {
+    this.link = "/modifier/" + this.library.id;
+    console.log('url : '  + this.link);
   }
 
+  display(){
+    console.log("id", this.link);
+  }
 }
