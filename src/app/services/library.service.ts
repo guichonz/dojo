@@ -24,5 +24,10 @@ export class LibraryService {
     return this.http.post<string>('http://localhost:8080/libraries', library, this.httpOptions);
   }
 
+  // observable
+  getLibrary(id: string): Observable<LibraryDTO> {
+    return this.http.get<LibraryDTO>('http://localhost:8080/libraries/' + id);
+  }
+
 
 }

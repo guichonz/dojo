@@ -24,13 +24,28 @@ export class LibraryFormComponent implements OnInit {
     postalCode:  new FormControl(''),
     street:  new FormControl('')
   });
-
+  library : LibraryDTO;
 
 
   constructor(private libraryService: LibraryService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
+    console.log("ici", id);
+    if (id !== null) {
+      this.libraryService.getLibrary(id).subscribe(library => {
+        this.library = library;
+        //this.libraryForm.controls['id'].setValue(this.library.id);
+        this.libraryForm.controls['label'].setValue(this.library.label);
+        this.libraryForm.controls['type'].setValue(this.library.type);
+        this.libraryForm.controls['firstName'].setValue(this.library.directorDTO.firstname);
+        this.libraryForm.controls['lastName'].setValue(this.library.directorDTO.lastname);
+        this.libraryForm.controls['city'].setValue(this.library.addressDTO.city);
+        this.libraryForm.controls['numberStreet'].setValue(this.library.addressDTO.numberStreet);
+        this.libraryForm.controls['postalCode'].setValue(this.library.addressDTO.postalCode);
+        this.libraryForm.controls['street'].setValue(this.library.addressDTO.street);
+      });
+    }
   }
 
   get city() { return this.libraryForm.get('city'); }
