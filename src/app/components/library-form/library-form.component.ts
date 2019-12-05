@@ -15,6 +15,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LibraryFormComponent implements OnInit {
 
   libraryForm = new FormGroup({
+    id: new FormControl(''),
     label: new FormControl(''),
     type: new FormControl('', [typesValidator()]),
     firstName: new FormControl('', [Validators.required]),
@@ -35,7 +36,7 @@ export class LibraryFormComponent implements OnInit {
     if (id !== null) {
       this.libraryService.getLibrary(id).subscribe(library => {
         this.library = library;
-        //this.libraryForm.controls['id'].setValue(this.library.id);
+        this.libraryForm.controls['id'].setValue(this.library.id);
         this.libraryForm.controls['label'].setValue(this.library.label);
         this.libraryForm.controls['type'].setValue(this.library.type);
         this.libraryForm.controls['firstName'].setValue(this.library.directorDTO.firstname);
@@ -55,20 +56,29 @@ export class LibraryFormComponent implements OnInit {
 
   onSubmit() {
     console.warn(this.libraryForm.value);
-    const libraryDTO = new LibraryDTO(null, this.libraryForm.value.label, this.libraryForm.value.type,
+    const libraryDTO = new LibraryDTO(this.libraryForm.value.id , this.libraryForm.value.label, this.libraryForm.value.type,
     // tslint:disable-next-line: max-line-length
     new AddressDTO( this.libraryForm.value.city, this.libraryForm.value.numberStreet, this.libraryForm.value.postalCode, this.libraryForm.value.street),
     new DirectorDTO( this.libraryForm.value.firstName, this.libraryForm.value.lastName));
 
-    console.log(libraryDTO) ;
-
-    this.libraryService.addLibrary(libraryDTO).subscribe (() => {
-      console.log('Success');
-      this.router.navigate(['/liste']);
-    },
-    (error) => {
-      console.log('une erreur est arrivée : ' + error );
-    });
+    console.log("libraryDTO.id :",libraryDTO.id) ;
+    if (libraryDTO.id === null || libraryDTO.id === undefined) {
+      this.libraryService.addLibrary(libraryDTO).subscribe (() => {
+        console.log('Success');
+        this.router.navigate(['/liste']);
+      },
+      (error) => {
+        console.log('une erreur est arrivée : ' + error );
+      });
+    } else {
+      this.libraryService.updateLibrary(libraryDTO).subscribe (() => {
+        console.log('Success');
+        this.router.navigate(['/liste']);
+      },
+      (error) => {
+        console.log('une erreur est arrivée : ' + error );
+      });
+    }
   }
 
 // export function typesValidator(): ValidatorFn {
