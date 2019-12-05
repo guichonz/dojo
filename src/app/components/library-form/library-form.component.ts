@@ -62,7 +62,7 @@ export class LibraryFormComponent implements OnInit {
     new DirectorDTO( this.libraryForm.value.firstName, this.libraryForm.value.lastName));
 
     console.log("libraryDTO.id :",libraryDTO.id) ;
-    if (libraryDTO.id === null || libraryDTO.id === undefined) {
+    if (libraryDTO.id === null || libraryDTO.id === undefined || libraryDTO.id === '' ) {
       this.libraryService.addLibrary(libraryDTO).subscribe (() => {
         console.log('Success');
         this.router.navigate(['/liste']);
