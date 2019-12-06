@@ -17,8 +17,6 @@ export class LibraryComponent implements OnInit {
 
   link : string;
 
-
-
   constructor(private libraryService: LibraryService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {

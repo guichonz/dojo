@@ -7,6 +7,7 @@ import { LibraryService } from 'src/app/services/library.service';
   templateUrl: './library-prime.component.html',
   styleUrls: ['./library-prime.component.scss']
 })
+
 export class LibraryPrimeComponent implements OnInit {
   libraries: LibraryDTO[] = [];
 

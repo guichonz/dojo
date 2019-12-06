@@ -1,10 +1,10 @@
 <p>library-prime works!</p>
-<p-table [value]="libraries">
+<p-table [value]="libraries" [paginator]="true" [rows]="4">
         <ng-template pTemplate="header">
             <tr>
                 <th>Type</th>
                 <th>Libellé</th>
-                <th>Directeur</th>
+                <th [pSortableColumn]= "'directorDTO.lastname'">Directeur</th>
                 <th>Adresse</th>
             </tr>
         </ng-template>
@@ -12,7 +12,7 @@
             <tr>
                 <td>{{library.type}}</td>
                 <td>{{library.label}}</td>
-                <td>{{library.directorDTO.firstName + ' ' + library.directorDTO.lastname }}</td>
+                <td>{{library.directorDTO.firstname + ' ' + library.directorDTO.lastname }}</td>
                 <td>{{library.addressDTO.numberStreet + ' ' + library.addressDTO.street + ' ' + library.addressDTO.postalCode + ' ' + library.addressDTO.city}}</td>
             </tr>
         </ng-template>
