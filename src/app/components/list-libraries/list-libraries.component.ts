@@ -29,10 +29,17 @@ export class ListLibrariesComponent implements OnInit {
 
   ngOnInit() {
     // this.libraries =   this.libraries.filter(lib => {
-    //   return lib.type === 'PUBLIC';
-    //});
+    //   return lib.label.includes(searchText);
+    // });
+
     //this.libraries =   this.libraries.filter(lib => lib.type === 'PUBLIC');
       this.libraryService.getAllLibraries().subscribe(libraries => this.libraries = libraries);
+
+      this.libraryService.searchValue.subscribe((searchText) => {
+        console.log('Valeur cherchée ' + searchText );
+        this.libraries =   this.libraries.filter( lib => lib.label.includes(searchText));
+      });
+
   }
 
 }
