@@ -10,6 +10,8 @@ import { DisplayDataComponent } from './components/display-data/display-data.com
 import { ListLibrariesComponent } from './components/list-libraries/list-libraries.component';
 import { LibraryFormComponent } from './components/library-form/library-form.component';
 import { SearchComponent } from './components/search/search.component';
+import { LibraryPrimeComponent } from './components/library-prime/library-prime.component';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,16 @@ import { SearchComponent } from './components/search/search.component';
     DisplayDataComponent,
     ListLibrariesComponent,
     LibraryFormComponent,
-    SearchComponent
+    SearchComponent,
+    LibraryPrimeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

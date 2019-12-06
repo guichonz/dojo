@@ -17,17 +17,17 @@ export class LibraryService {
   constructor(private http: HttpClient) { }
 
   // observable
-  getAllLibraries(): Observable<LibraryDTO[]> {
+    getAllLibraries(): Observable<LibraryDTO[]> {
     return this.http.get<LibraryDTO[]>('http://localhost:8080/libraries');
   }
 
    // observable
-  addLibrary(library: LibraryDTO): Observable<string> {
+    addLibrary(library: LibraryDTO): Observable<string> {
     return this.http.post<string>('http://localhost:8080/libraries', library, this.httpOptions);
   }
 
   // observable
-  getLibrary(id: string): Observable<LibraryDTO> {
+    getLibrary(id: string): Observable<LibraryDTO> {
     return this.http.get<LibraryDTO>('http://localhost:8080/libraries/' + id);
   }
 

@@ -9,12 +9,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
   searchText = '';
-  constructor(private libraryService: LibraryService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private libraryService: LibraryService) { }
 
   ngOnInit() {
   }
 
-  seachLibrary(){
+  seachLibrary() {
     console.log(this.searchText);
     this.libraryService.searchValue.next(this.searchText);
   }
