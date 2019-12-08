@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LibraryPrimeComponent } from './library-prime.component';
+import { LibraryPrimeComponent } from "./LibraryPrimeComponent";
 
 describe('LibraryPrimeComponent', () => {
   let component: LibraryPrimeComponent;

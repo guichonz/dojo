@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListLibrariesComponent } from './components/list-libraries/list-libraries.component';
 import { LibraryFormComponent } from './components/library-form/library-form.component';
-import { LibraryPrimeComponent } from './components/library-prime/library-prime.component';
+import { LibraryPrimeComponent } from "./components/library-prime/LibraryPrimeComponent";
 
 
 const routes: Routes = [

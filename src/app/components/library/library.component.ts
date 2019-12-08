@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LibraryDTO } from 'src/app/shared-data/library-dto';
 import { AddressDTO } from 'src/app/shared-data/address-dto';
 import { DirectorDTO } from 'src/app/shared-data/director-dto';
@@ -14,8 +14,9 @@ export class LibraryComponent implements OnInit {
 
   @Input()
   library: LibraryDTO;
-
-  link : string;
+  link: string;
+  numberOfClick = 0;
+  @Output() alertClick = new EventEmitter();
 
   constructor(private libraryService: LibraryService, private router: Router, private route: ActivatedRoute) { }
 
@@ -38,5 +39,12 @@ export class LibraryComponent implements OnInit {
     (error) => {
       console.log('une erreur est arrivée : ' + error );
     });
+  }
+
+  declencher() {
+    this.numberOfClick += 1;
+    this.alertClick.emit();
+    // this.numberOfClick += 1;
+    // console.log("Nombre de Click =" + this.library.label + this.numberOfClick);
   }
 }

@@ -10,7 +10,7 @@ import { DisplayDataComponent } from './components/display-data/display-data.com
 import { ListLibrariesComponent } from './components/list-libraries/list-libraries.component';
 import { LibraryFormComponent } from './components/library-form/library-form.component';
 import { SearchComponent } from './components/search/search.component';
-import { LibraryPrimeComponent } from './components/library-prime/library-prime.component';
+import { LibraryPrimeComponent } from "./components/library-prime/LibraryPrimeComponent";
 import {TableModule} from 'primeng/table';
 
 @NgModule({

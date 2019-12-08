@@ -1,8 +1,9 @@
 <p>list-libraries works!</p>
+<div> nombre de click de bibiliothèque  est égale à {{numberOfClick}}</div>
 
 <app-library *ngFor="let myLibrary of libraries"
 
-    [library]="myLibrary">
+    [library]="myLibrary" (alertClick)="increaseCpt()" >
 
 </app-library>
 
