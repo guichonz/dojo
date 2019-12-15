@@ -25,11 +25,12 @@ export class ListLibrariesComponent implements OnInit {
     // new DirectorDTO('Mon', 'Général'))
     ];
 
-    numberOfClick = 0;
+    numberOfClick: number;
 
   constructor(private libraryService: LibraryService) { }
 
   ngOnInit() {
+    this.numberOfClick = 0;
     // this.libraries =   this.libraries.filter(lib => {
     //   return lib.label.includes(searchText);
     // });

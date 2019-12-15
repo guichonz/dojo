@@ -37,8 +37,8 @@ export class LibraryService {
   }
 
   // observable
-    deleteLibrary(id: string): Observable<string> {
-    return this.http.delete<string>('http://localhost:8080/libraries/' + id);
+    deleteLibrary(id: string): Observable<void> {
+    return this.http.delete<void>('http://localhost:8080/libraries/' + id);
   }
 
 }

@@ -68,7 +68,7 @@ export class LibraryFormComponent implements OnInit {
         this.router.navigate(['/liste']);
       },
       (error) => {
-        console.log('une erreur est arrivée : ' + error );
+        console.log('une erreur est arrivée1 : ' + error );
       });
     } else {
       this.libraryService.updateLibrary(libraryDTO).subscribe (() => {
@@ -76,7 +76,7 @@ export class LibraryFormComponent implements OnInit {
         this.router.navigate(['/liste']);
       },
       (error) => {
-        console.log('une erreur est arrivée : ' + error );
+        console.log('une erreur est arrivée2 : ' + error );
       });
     }
   }
